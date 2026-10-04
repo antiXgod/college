@@ -1,6 +1,30 @@
+
+<div align="center">
+
 # 🚨 IssueHub
 
-> **A smart campus issue reporting & resolution platform for students and administrators.**
+### *Report. Track. Resolve.*
+
+<p>
+  <strong>A minimal, modern campus issue reporting platform built for students and administrators.</strong>
+</p>
+
+<br/>
+
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=22&duration=2800&pause=900&color=8B5CF6&center=true&vCenter=true&width=650&lines=Report+campus+issues+in+seconds;Track+every+report+from+start+to+resolution;Connect+students+with+campus+administration;Make+your+campus+better%2C+one+issue+at+a+time" alt="IssueHub animated tagline" />
+
+<br/>
+
+<p>
+  <img src="https://img.shields.io/badge/Frontend-React%20%2B%20Vite-8B5CF6?style=flat-square" alt="Frontend"/>
+  <img src="https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-111113?style=flat-square" alt="Backend"/>
+  <img src="https://img.shields.io/badge/Database-MongoDB-22C55E?style=flat-square" alt="Database"/>
+  <img src="https://img.shields.io/badge/Auth-HTTP--Only%20JWT-E5E7EB?style=flat-square" alt="Authentication"/>
+</p>
+
+</div>
+
+---
 
 IssueHub makes it easy for students to **report campus problems, track progress, discover related issues, and raise community urgency**, while giving administrators a secure dashboard to manage, prioritize, and resolve those problems.
 
@@ -37,39 +61,71 @@ Campus problems are often reported through scattered WhatsApp messages, verbal c
 
 ## 🎨 UI & Design
 
-IssueHub uses a **modern charcoal interface with restrained purple accents**, designed for a clean campus-tech experience.
+IssueHub follows a **minimal dark UI**: quiet surfaces, strong typography, one accent color, and motion that helps users understand what is happening.
 
-### Design principles
+### ✨ Motion language
 
-| Principle | Implementation |
+Animations should feel **fast, subtle, and purposeful**:
+
+```text
+Page transition       → 180–250ms ease-out
+Card hover            → 150–200ms
+Button interaction    → 120–160ms
+Status changes        → 250–350ms
+Dashboard counters    → 600–900ms
+Loading states        → soft pulse / skeleton
+```
+
+### Minimal visual system
+
+| Element | Direction |
 |---|---|
-| 🎯 Focus | Clear dashboards and task-oriented screens |
-| 🌑 Modern | Charcoal/dark visual system |
-| 🟣 Accent | Restrained purple for primary actions |
-| 📱 Responsive | Student and admin interfaces adapt to screen size |
-| ♿ Accessible | Clear states, readable contrast, descriptive actions |
-| 🔄 Feedback | Loading, empty, error, and success states |
-| 🔐 Trust | Secure authentication and server-side authorization |
-
-### Suggested visual system
+| Background | Deep charcoal |
+| Cards | Slightly elevated charcoal |
+| Accent | Restrained purple |
+| Typography | Clean, bold, readable |
+| Borders | Thin and low-contrast |
+| Shadows | Soft, minimal |
+| Animation | Subtle, never distracting |
 
 ```text
 Background       #111113
-Surface           #19191D
-Elevated Surface  #222228
-Primary Accent    #8B5CF6
-Primary Hover     #7C3AED
-Text              #F5F5F5
-Muted Text        #A1A1AA
-Border            #2D2D34
-Success           #22C55E
-Warning            #F59E0B
-Danger            #EF4444
+Surface          #19191D
+Elevated Surface #222228
+Purple Accent    #8B5CF6
+Text             #F5F5F5
+Muted Text       #A1A1AA
+Border           #2D2D34
+Success          #22C55E
+Warning          #F59E0B
+Danger           #EF4444
 ```
 
-> Keep the purple accent focused on buttons, active navigation, links, badges, and important highlights rather than applying it everywhere.
+### 🎞️ Recommended UI animations
 
----
+```text
+Dashboard
+   ↓
+Cards gently fade + slide upward
+   ↓
+Numbers count into their real values
+   ↓
+Charts/insights appear progressively
+
+Issue card
+   ↓
+Hover → tiny lift + soft shadow
+   ↓
+Click → quick scale feedback
+
+Report status
+   ↓
+Status badge smoothly changes
+   ↓
+Small success confirmation appears
+```
+
+> **Design rule:** animation should communicate state or hierarchy—not decorate every element.
 
 ## 🚀 Core Features
 
@@ -160,6 +216,34 @@ It can surface:
 - Concern flags
 
 No fake or seeded dashboard statistics are used.
+
+---
+
+# 🪄 Experience at a Glance
+
+```text
+╭────────────────────────────────────────────────────────────╮
+│  IssueHub                                      🔔   👤     │
+│                                                            │
+│  Good morning 👋                                           │
+│  What needs attention on campus?                           │
+│                                                            │
+│  ┌────────────┐ ┌────────────┐ ┌────────────┐              │
+│  │  12        │ │  04        │ │  08        │              │
+│  │  Reports   │ │  Pending   │ │  Resolved  │              │
+│  └────────────┘ └────────────┘ └────────────┘              │
+│                                                            │
+│  Recent Campus Issues                                     │
+│  ────────────────────────────────────────────────────────  │
+│  🔴 Water leakage          Maintenance     ● In Progress  │
+│  🟣 Broken classroom fan   Electrical      ● Reported     │
+│  🟢 Street light issue     Infrastructure  ● Resolved     │
+│                                                            │
+│                  + Report an Issue                          │
+╰────────────────────────────────────────────────────────────╯
+```
+
+The interface intentionally avoids visual clutter: **one strong action, clear status, useful information, and restrained motion.**
 
 ---
 
@@ -823,6 +907,27 @@ The backend controls the assigned role.
 
 ---
 
+## ♿ Motion Accessibility
+
+Animations should respect the user's system preference:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+```
+
+This keeps the experience polished without making motion a requirement for usability.
+
+---
+
 # 🔒 Security Checklist
 
 Before production:
@@ -915,6 +1020,14 @@ Built to make campus problem reporting:
 
 ---
 
-## ⭐ If you find IssueHub useful
+#<div align="center">
 
-Give the repository a ⭐ and share it with your campus community.
+### 🚨 IssueHub
+
+**Report. Track. Resolve.**
+
+*Make your campus better, one issue at a time.*
+
+⭐ Star the repository if you find it useful.
+
+</div>
